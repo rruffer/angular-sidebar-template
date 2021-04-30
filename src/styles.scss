@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./scss/login.scss";
+@import "./scss/sidebar.scss";
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+body {
+  font-size: .9rem;
+}
+
+.page-wrapper.toggled .sidebar {
+  left: -300px;
+}
+
+// angular perfect scrollbar style
+.sidebar .ps.ps--scrolling-y>.ps__rail-y,
+.sidebar>.ps.ps--scrolling-x>.ps__rail-x,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: transparent !important;
+}
+
+.sidebar .ps.ps--active-y>.ps__rail-y:hover,
+.sidebar>.ps.ps--active-y>.ps__rail-y.ps--clicking {
+  width: 10px !important;
+}
+
+.ps__thumb-y {
+  background-color: #fff !important;
+  width: 6px!important;
+  border-radius: 0px!important;
+  opacity: .5;
+
+}
+
+.page-wrapper {
+  height: 100vh;
+  background: #f6f6f6;
+
+  .page-content {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    transition: padding-left .3s ease;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 300px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 998;
+      background: #000;
+      opacity: .5;
+      display: none;
+
+      &.show {
+
+        @media screen and (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    left: 0px;
+  }
+
+  &.toggled {
+
+    .page-content {
+      padding-left: 0;
+    }
+  }
+
+  .attribution{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    margin: 5px;
+    letter-spacing: 1px;
+  }
+}
+
+

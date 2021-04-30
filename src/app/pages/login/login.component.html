@@ -1,0 +1,20 @@
+<div class="login-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2 class="text-center">Sotreq Login</h2>
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Informe o usuario" formControlName="userName" required>
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('userName')">
+            <p>Campo usuário obrigatório!</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control" placeholder="Informe a senha" formControlName="password" required>
+        </div>
+        <div class="invalid-feedback" *ngIf="isFieldInvalid('password')">
+          <p>Campo senha obrigatório!</p>
+        </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </div>
+  </form>
+</div>
