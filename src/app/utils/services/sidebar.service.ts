@@ -1,7 +1,9 @@
+import { Submenu } from './../models/submenu';
+import { Menu, TypeMenu } from './../models/menu';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SidebarService {
   toggled = false;
@@ -9,7 +11,7 @@ export class SidebarService {
   menus = [
     {
       title: 'general',
-      type: 'header'
+      type: 'header',
     },
     {
       title: 'Dashboard',
@@ -18,23 +20,23 @@ export class SidebarService {
       type: 'dropdown',
       badge: {
         text: 'New ',
-        class: 'badge-warning'
+        class: 'badge-warning',
       },
       submenus: [
         {
           title: 'Dashboard 1',
           badge: {
             text: 'Pro ',
-            class: 'badge-success'
-          }
+            class: 'badge-success',
+          },
         },
         {
-          title: 'Dashboard 2'
+          title: 'Dashboard 2',
         },
         {
-          title: 'Dashboard 3'
-        }
-      ]
+          title: 'Dashboard 3',
+        },
+      ],
     },
     {
       title: 'E-commerce',
@@ -43,19 +45,19 @@ export class SidebarService {
       type: 'dropdown',
       badge: {
         text: '3',
-        class: 'badge-danger'
+        class: 'badge-danger',
       },
       submenus: [
         {
           title: 'Products',
         },
         {
-          title: 'Orders'
+          title: 'Orders',
         },
         {
-          title: 'Credit cart'
-        }
-      ]
+          title: 'Credit cart',
+        },
+      ],
     },
     {
       title: 'Components',
@@ -67,18 +69,18 @@ export class SidebarService {
           title: 'General',
         },
         {
-          title: 'Panels'
+          title: 'Panels',
         },
         {
-          title: 'Tables'
+          title: 'Tables',
         },
         {
-          title: 'Icons'
+          title: 'Icons',
         },
         {
-          title: 'Forms'
-        }
-      ]
+          title: 'Forms',
+        },
+      ],
     },
     {
       title: 'Charts',
@@ -90,15 +92,15 @@ export class SidebarService {
           title: 'Pie chart',
         },
         {
-          title: 'Line chart'
+          title: 'Line chart',
         },
         {
-          title: 'Bar chart'
+          title: 'Bar chart',
         },
         {
-          title: 'Histogram'
-        }
-      ]
+          title: 'Histogram',
+        },
+      ],
     },
     {
       title: 'Maps',
@@ -110,13 +112,13 @@ export class SidebarService {
           title: 'Google maps',
         },
         {
-          title: 'Open street map'
-        }
-      ]
+          title: 'Open street map',
+        },
+      ],
     },
     {
       title: 'Extra',
-      type: 'header'
+      type: 'header',
     },
     {
       title: 'Documentation',
@@ -125,26 +127,26 @@ export class SidebarService {
       type: 'simple',
       badge: {
         text: 'Beta',
-        class: 'badge-primary'
+        class: 'badge-primary',
       },
     },
     {
       title: 'Calendar',
       icon: 'fa fa-calendar',
       active: false,
-      type: 'simple'
+      type: 'simple',
     },
     {
       title: 'Examples',
       icon: 'fa fa-folder',
       active: false,
-      type: 'simple'
-    }
+      type: 'simple',
+    },
   ];
-  constructor() { }
+  constructor() {}
 
   toggle() {
-    this.toggled = ! this.toggled;
+    this.toggled = !this.toggled;
   }
 
   getSidebarState() {
@@ -166,4 +168,184 @@ export class SidebarService {
   set hasBackgroundImage(hasBackgroundImage) {
     this._hasBackgroundImage = hasBackgroundImage;
   }
+
+  get listMenus(): Array<Menu> {
+    const listMenu = new Array<Menu>();
+
+    listMenu.push(this.menuSercal());
+    listMenu.push(this.menuDescontos());
+    listMenu.push(this.menuCustosPorUf());
+    listMenu.push(this.menuPrecificacao());
+    listMenu.push(this.menuPecas());
+    listMenu.push(this.menuPerfis());
+    listMenu.push(this.menuPermissao());
+
+    return listMenu;
+  }
+
+  private menuSercal(): Menu {
+    return {
+      title: 'Sercal',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.dropdown,
+      submenus: [
+        {
+          title: 'Lista de Planilhas',
+          link: '',
+        },
+        {
+          title: 'Atualizar Planilhas',
+          link: '',
+        },
+        {
+          title: 'Histórico de Atualizações',
+          link: '',
+        },
+        {
+          title: 'Restaurar Planilhas',
+          link: '',
+        }
+      ],
+    };
+  }
+
+  private menuDescontos(): Menu {
+    return {
+      title: 'Descontos',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.dropdown,
+      submenus: [
+        {
+          title: 'Lista de Planilha de Desconto',
+          link: '',
+        },
+        {
+          title: 'Atualizar Planilha de Desconto',
+          link: '',
+        },
+        {
+          title: 'Detalhes da Atualização - Desconto',
+          link: '',
+        },
+        {
+          title: 'Restaurar Planilha de Desconto',
+          link: '',
+        }
+      ],
+    };
+  }
+
+  private menuCustosPorUf(): Menu {
+    return {
+      title: 'Custo por UF',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.dropdown,
+      submenus: [
+        {
+          title: 'Lista de Custo por UF',
+          link: '',
+        },
+        {
+          title: 'Novo Calculo',
+          link: '',
+        },
+        {
+          title: 'Detalhes da UF',
+          link: '',
+        },
+      ],
+    };
+  }
+
+  private menuPrecificacao(): Menu {
+    return {
+      title: 'Precificação',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.dropdown,
+      submenus: [
+        {
+          title: 'Lista de Precificações',
+          link: '',
+        },
+        {
+          title: 'Nova Precificação',
+          link: '',
+        },
+        {
+          title: 'Nova Precificação Operação',
+          link: '',
+        },
+        {
+          title: 'Editar Precificação',
+          link: '',
+        },
+        {
+          title: 'Editar Precificação Operação',
+          link: '',
+        },
+        {
+          title: 'Atualizar Precificação',
+          link: '',
+        },
+        {
+          title: 'Atualizar Precificação Operação',
+          link: '',
+        },
+        {
+          title: 'Precificação - Resultados',
+          link: '',
+        },
+        {
+          title: 'Detalhes do Modelo',
+          link: '',
+        },
+        {
+          title: 'Dados da Proposta',
+          link: '',
+        }
+      ],
+    };
+  }
+
+  private menuPecas(): Menu {
+    return {
+      title: 'Lista Geral de Peças',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.simples,
+    };
+  }
+
+  private menuPerfis(): Menu {
+    return {
+      title: 'Perfis',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.dropdown,
+      submenus: [
+        {
+          title: 'Lista de Perfis',
+          link: '',
+        },
+        {
+          title: 'Novo Perfil',
+          link: '',
+        }
+      ],
+    };
+  }
+
+  private menuPermissao(): Menu {
+    return {
+      title: 'Permissão',
+      icon: 'fa fa-tachometer-alt',
+      active: false,
+      type: TypeMenu.simples,
+    };
+  }
+
 }

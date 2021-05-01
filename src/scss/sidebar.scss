@@ -122,7 +122,7 @@
           font-size: 11px;
           margin-top: 4px;
 
-          i {
+          em {
             font-size: 8px;
             margin-right: 4px;
             color: #5cb85c;
@@ -166,7 +166,7 @@
           position: relative;
           padding: 8px 30px 8px 20px;
 
-          i {
+          em {
             margin-right: 10px;
             font-size: 12px;
             width: 30px;
@@ -176,7 +176,7 @@
             border-radius: 4px;
           }
 
-          &:hover>i::before {
+          &:hover>em::before {
             display: inline-block;
             animation: swing ease-in-out .5s 1 alternate;
           }
@@ -354,7 +354,7 @@
           width: 40px;
           height: 40px;
 
-          i {
+          em {
             width: 35px;
             height: 35px;
             text-align: center;
@@ -461,19 +461,19 @@ $img-shadow-color:rgba(0, 0, 0, 0.5);
   .sidebar-menu .sidebar-dropdown.active>a,
   .sidebar-profile .user-info,
   .sidebar-header>a:hover,
-  .sidebar-footer>div>a:hover i,
+  .sidebar-footer>div>a:hover em,
   #close-sidebar:hover {
     color: $hover-color;
   }
 
-  ul li:hover a i,
+  ul li:hover a em,
   .sidebar-dropdown .sidebar-submenu li a:hover:before,
   .sidebar-search input.search-menu:focus+span,
-  .sidebar-menu .sidebar-dropdown.active a i {
+  .sidebar-menu .sidebar-dropdown.active a em {
     color: $hover-color;
   }
 
-  .sidebar-menu ul li a i,
+  .sidebar-menu ul li a em,
   .sidebar-menu .sidebar-dropdown div,
   .sidebar-search input.search-menu,
   .sidebar-search .input-group-text {
@@ -530,7 +530,7 @@ $img-shadow-color:rgba(0, 0, 0, 0.5);
       box-shadow: none;
     }
 
-    .sidebar-menu ul li a i,
+    .sidebar-menu ul li a em,
     .sidebar-menu .sidebar-dropdown div,
     .sidebar-search input.search-menu,
     .sidebar-search .input-group-text {

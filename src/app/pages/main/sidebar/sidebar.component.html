@@ -15,7 +15,7 @@
           </span>
           <span class="user-role">Administrator</span>
           <span class="user-status">
-            <i class="fa fa-circle"></i>
+            <em class="fa fa-circle"></em>
             <span>Online</span>
           </span>
         </div>
@@ -26,7 +26,7 @@
             <input type="text" class="form-control search-menu" placeholder="Search...">
             <div class="input-group-append">
               <span class="input-group-text">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <em class="fa fa-search" aria-hidden="true"></em>
               </span>
             </div>
           </div>
@@ -34,14 +34,14 @@
       </div>
       <div class="sidebar-menu">
         <ul>
-          <li *ngFor="let menu of menus" class="dropdown-toggle-split" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
-            <span *ngIf="menu.type === 'header'">{{menu.title}}</span>
-            <a *ngIf="menu.type !== 'header'" href="#" (click)='toggle(menu)'>
-              <i class="{{menu.icon}}"></i>
+          <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === tipoMenu.dropdown , 'header-menu':menu.type === tipoMenu.header}">
+            <span *ngIf="menu.type === tipoMenu.header">{{menu.title}}</span>
+            <a *ngIf="menu.type !== tipoMenu.header" href="#" (click)='toggle(menu)'>
+              <em class="{{menu.icon}}"></em>
               <span>{{menu.title}}</span>
               <!-- <span *ngIf="menu.badge" class="badge badge-pill" [ngClass]="menu.badge.class">{{menu.badge.text}}</span> -->
             </a>
-            <div *ngIf="menu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(menu)">
+            <div *ngIf="menu.type === tipoMenu.dropdown" class="sidebar-submenu" [@slide]="getState(menu)">
               <ul>
                 <li *ngFor="let submenu of menu.submenus">
                   <a href="#"> {{submenu.title}}
@@ -59,19 +59,19 @@
     <div class="dropdown" dropdown>
 
       <a href="#" dropdownToggle>
-        <i class="fa fa-bell"></i>
+        <em class="fa fa-bell"></em>
         <span class="badge badge-pill badge-warning notification">5</span>
       </a>
       <div class="dropdown-menu notifications" *dropdownMenu>
         <div class="notifications-header">
-          <i class="fa fa-bell"></i>
+          <em class="fa fa-bell"></em>
           Notifications
         </div>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">
           <div class="notification-content">
             <div class="icon">
-              <i class="fas fa-check text-success border border-success"></i>
+              <em class="fas fa-check text-success border border-success"></em>
             </div>
             <div class="content">
               <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -85,7 +85,7 @@
         <a class="dropdown-item" href="#">
           <div class="notification-content">
             <div class="icon">
-              <i class="fas fa-exclamation text-info border border-info"></i>
+              <em class="fas fa-exclamation text-info border border-info"></em>
             </div>
             <div class="content">
               <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -99,7 +99,7 @@
         <a class="dropdown-item" href="#">
           <div class="notification-content">
             <div class="icon">
-              <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+              <em class="fas fa-exclamation-triangle text-warning border border-warning"></em>
             </div>
             <div class="content">
               <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -116,12 +116,12 @@
     </div>
     <div class="dropdown" dropdown>
       <a href="#" dropdownToggle>
-        <i class="fa fa-envelope"></i>
+        <em class="fa fa-envelope"></em>
         <span class="badge badge-pill badge-success notification">7</span>
       </a>
       <div class="dropdown-menu messages" *dropdownMenu>
         <div class="messages-header">
-          <i class="fa fa-envelope"></i>
+          <em class="fa fa-envelope"></em>
           Messages
         </div>
         <div class="dropdown-divider"></div>
@@ -176,7 +176,7 @@
     </div>
     <div class="dropdown" dropdown>
       <a href="#" dropdownToggle>
-        <i class="fa fa-cog"></i>
+        <em class="fa fa-cog"></em>
         <span class="badge-sonar"></span>
       </a>
       <div class="dropdown-menu" *dropdownMenu>
@@ -187,7 +187,7 @@
     </div>
     <div>
       <a href="#">
-        <i class="fa fa-power-off"></i>
+        <em class="fa fa-power-off"></em>
       </a>
     </div>
   </div>  -->
